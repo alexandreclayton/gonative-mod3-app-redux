@@ -1,16 +1,24 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Text } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 
 // Redux
 import { connect } from 'react-redux';
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
+
 const TodoList = props => (
-  <Fragment>
-    { props.todos.map(todo => (
+  <View style={styles.container}>
+    {props.todos.map(todo => (
       <Text key={todo}>{todo}</Text>
-    )) }
-  </Fragment>
+    ))}
+  </View>
 );
 
 TodoList.propTypes = {
