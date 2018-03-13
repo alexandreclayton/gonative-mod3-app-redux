@@ -6,7 +6,9 @@ const INITIAL_STATE = [
 export default function todos(state = INITIAL_STATE, action) {
   switch (action.type) {
     case 'ADD_TODO':
-      return [...state, action.payload];
+      return [...state, { id: Math.random(), text: action.payload }];
+    case 'REMOVE_TODO':
+      return [...state.filter(f => f.id !== action.payload)];
     default:
       return state;
   }
