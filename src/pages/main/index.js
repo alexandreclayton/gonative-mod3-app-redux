@@ -1,6 +1,26 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, StatusBar } from 'react-native';
+import { NavigationActions } from 'react-navigation';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-const Main = () => <View />;
+import styles from './styles';
 
-export default Main;
+const Main = () => (
+  <View style={styles.container}>
+    <StatusBar barStyle="light-content" />
+  </View>
+);
+
+Main.navigationOptions = {
+  title: 'Main',
+  header: null,
+};
+
+const mapStateToProps = state => ({
+  nav: state.nav,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(NavigationActions, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main);
