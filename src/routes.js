@@ -1,8 +1,6 @@
-import { StackNavigation } from 'react-navigation';
+import { StackNavigator } from 'react-navigation';
 import Main from 'pages/main';
 
-const Routes = StackNavigation({
+export default StackNavigator({
   Main: { screen: Main },
 });
-
-export default Routes;
