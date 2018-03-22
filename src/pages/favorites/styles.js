@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { colors, matrics } from 'styles';
+import { colors, metrics } from 'styles';
 
 const styles = StyleSheet.create({
   container: {
@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   empty: {
     alignSelf: 'center',
     color: colors.white,
-    marginTop: matrics.baseMargin * 2,
+    marginTop: metrics.baseMargin * 2,
     fontSize: 14,
   },
 });
